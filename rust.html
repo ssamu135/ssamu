@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust | Guía Completa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-cog"></i> Rust</h1>
+        <p class="subtitle">Rendimiento seguro y concurrente</p>
+    </header>
+    
+    <nav>
+        <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+        <a href="sandbox.html"><i class="fas fa-code"></i> Probador</a>
+        <a href="python.html"><i class="fab fa-python"></i> Python</a>
+        <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+        <a href="java.html"><i class="fab fa-java"></i> Java</a>
+        <a href="cpp.html"><i class="fas fa-copyright"></i> C++</a>
+        <a href="php.html"><i class="fab fa-php"></i> PHP</a>
+        <a href="csharp.html"><i class="fas fa-hashtag"></i> C#</a>
+        <a href="sql.html"><i class="fas fa-database"></i> SQL</a>
+        <a href="ruby.html"><i class="fas fa-gem"></i> Ruby</a>
+        <a href="swift.html"><i class="fab fa-swift"></i> Swift</a>
+        <a href="rust.html" class="active"><i class="fas fa-cog"></i> Rust</a>
+    </nav>
+    
+    <div class="container">
+        <div class="language-card">
+            <div class="language-header">
+                <img src="https://cdn-icons-png.flaticon.com/512/6125/6125000.png" alt="Logo Rust" class="language-logo">
+                <div>
+                    <h2>Rust</h2>
+                    <div class="meta-info">
+                        <span class="meta"><i class="fas fa-calendar"></i> Creado en 2010</span>
+                        <span class="meta"><i class="fas fa-users"></i> Mozilla Research</span>
+                        <span class="meta"><i class="fas fa-trophy"></i> Lenguaje más amado (Stack Overflow)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-container">
+                <div class="tabs">
+                    <button class="tab-button active" onclick="openTab(event, 'overview')">Descripción</button>
+                    <button class="tab-button" onclick="openTab(event, 'syntax')">Sintaxis</button>
+                    <button class="tab-button" onclick="openTab(event, 'examples')">Ejemplos</button>
+                    <button class="tab-button" onclick="openTab(event, 'resources')">Recursos</button>
+                </div>
+                
+                <div id="overview" class="tab-content" style="display: block;">
+                    <h3><i class="fas fa-info-circle"></i> Características Principales</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> <strong>Seguridad de memoria:</strong> Sin punteros colgantes ni fugas</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Concurrencia segura:</strong> Sin condiciones de carrera</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Rendimiento:</strong> Comparable a C/C++</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Sin recolector de basura:</strong> Control manual sin riesgos</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Abstracciones cero costo:</strong> No penalizan rendimiento</li>
+                    </ul>
+                    
+                    <h3><i class="fas fa-cogs"></i> Usos Comunes</h3>
+                    <div class="uses-grid">
+                        <div class="use-card">
+                            <i class="fas fa-microchip"></i>
+                            <h4>Sistemas Embebidos</h4>
+                            <p>IoT, dispositivos</p>
+                        </div>
+                        <div class="use-card">
+                            <i class="fas fa-network-wired"></i>
+                            <h4>Infraestructura Web</h4>
+                            <p>Servidores, navegadores</p>
+                        </div>
+                        <div class="use-card">
+                            <i class="fas fa-gamepad"></i>
+                            <h4>Motores de Juego</h4>
+                            <p>Gráficos de alto rendimiento</p>
+                        </div>
+                        <div class="use-card">
+                            <i class="fas fa-lock"></i>
+                            <h4>Seguridad Crítica</h4>
+                            <p>Blockchain, criptografía</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="syntax" class="tab-content">
+                    <h3><i class="fas fa-code"></i> Sintaxis Básica</h3>
+                    <div class="syntax-example">
+                        <h4>Variables y tipos</h4>
+                        <pre><code>// Inmutabilidad por defecto
+let x = 5;          // i32 por defecto
+let y: i64 = 10;    // Tipo explícito
+let mut z = 15;     // Variable mutable
+
+// Constantes
+const PI: f64 = 3.141592;
+
+// Tuplas
+let tupla: (i32, f64, char) = (500, 6.4, 'a');
+
+// Structs
+struct Usuario {
+    nombre: String,
+    edad: u32,
+    activo: bool,
+}</code></pre>
+                    </div>
+                    
+                    <div class="syntax-example">
+                        <h4>Ownership y Borrowing</h4>
+                        <pre><code>// Ownership (semántica de movimiento)
+let s1 = String::from("hola");
+let s2 = s1;  // s1 ya no es válido aquí
+
+// Borrowing (préstamos)
+fn calcular_longitud(s: &String) -> usize {
+    s.len()
+}
+
+let s = String::from("texto");
+let len = calcular_longitud(&s);  // Referencia inmutable
+println!("{} tiene {} caracteres", s, len);
+
+// Mutable borrowing
+fn modificar(s: &mut String) {
+    s.push_str(", mundo!");
+}
+
+let mut s = String::from("Hola");
+modificar(&mut s);</code></pre>
+                    </div>
+                </div>
+                
+                <div id="examples" class="tab-content">
+                    <h3><i class="fas fa-laptop-code"></i> Ejemplos Prácticos</h3>
+                    
+                    <div class="example-card">
+                        <h4>1. Hola Mundo y pattern matching</h4>
+                        <pre><code>fn main() {
+    println!("¡Hola, mundo!");
+    
+    // Pattern matching
+    let numero = 3;
+    
+    match numero {
+        1 => println!("Uno"),
+        2 | 3 | 5 | 7 => println!("Número primo"),
+        4..=10 => println!("Entre 4 y 10"),
+        _ => println!("Otro número"),
+    }
+    
+    // if let
+    let algun_valor = Some(5);
+    if let Some(5) = algun_valor {
+        println!("Es un cinco!");
+    }
+}</code></pre>
+                        <button class="try-button" onclick="window.open('sandbox.html?language=rust', '_blank')">
+                            <i class="fas fa-play"></i> Probar este código
+                        </button>
+                    </div>
+                    
+                    <div class="example-card">
+                        <h4>2. Concurrencia segura</h4>
+                        <pre><code>use std::thread;
+use std::sync::{Arc, Mutex};
+
+fn main() {
+    // Datos compartidos protegidos por Mutex
+    let contador = Arc::new(Mutex::new(0));
+    let mut handles = vec![];
+
+    for _ in 0..10 {
+        let contador = Arc::clone(&contador);
+        let handle = thread::spawn(move || {
+            let mut num = contador.lock().unwrap();
+            *num += 1;
+        });
+        handles.push(handle);
+    }
+
+    for handle in handles {
+        handle.join().unwrap();
+    }
+
+    println!("Resultado: {}", *contador.lock().unwrap());
+}</code></pre>
+                    </div>
+                    
+                    <div class="example-card">
+                        <h4>3. Web Server con Actix</h4>
+                        <pre><code>use actix_web::{web, App, HttpResponse, HttpServer, Responder};
+
+async fn hola() -> impl Responder {
+    HttpResponse::Ok().body("Hola desde Rust!")
+}
+
+#[actix_web::main]
+async fn main() -> std::io::Result<()> {
+    HttpServer::new(|| {
+        App::new()
+            .route("/", web::get().to(hola))
+    })
+    .bind("127.0.0.1:8080")?
+    .run()
+    .await
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div id="resources" class="tab-content">
+                    <h3><i class="fas fa-book"></i> Recursos de Aprendizaje</h3>
+                    
+                    <div class="resource-card">
+                        <h4><i class="fas fa-link"></i> Documentación Oficial</h4>
+                        <ul>
+                            <li><a href="https://www.rust-lang.org/es" target="_blank">Sitio oficial de Rust</a></li>
+                            <li><a href="https://doc.rust-lang.org/book/" target="_blank">The Rust Book</a></li>
+                            <li><a href="https://doc.rust-lang.org/stable/rust-by-example/" target="_blank">Rust by Example</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h4><i class="fas fa-graduation-cap"></i> Cursos Recomendados</h4>
+                        <ul>
+                            <li><a href="https://www.rust-lang.org/es/learn" target="_blank">Recursos de aprendizaje oficiales</a></li>
+                            <li><a href="https://exercism.org/tracks/rust" target="_blank">Exercism: Rust Track</a></li>
+                            <li><a href="https://www.udemy.com/course/rust-fundamentals/" target="_blank">UDEMY: Rust Fundamentals</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h4><i class="fas fa-tools"></i> Ecosistema Popular</h4>
+                        <ul>
+                            <li><strong>Web:</strong> Actix, Rocket, Warp</li>
+                            <li><strong>CLI:</strong> Clap, StructOpt</li>
+                            <li><strong>Concurrencia:</strong> Tokio, async-std</li>
+                            <li><strong>Serialización:</strong> Serde, bincode</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Guía de Programación | Rust: Seguridad sin sacrificar rendimiento</p>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            // Ocultar todos los contenidos de pestañas
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].style.display = "none";
+            }
+            
+            // Desactivar todos los botones de pestañas
+            const tabButtons = document.getElementsByClassName("tab-button");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            
+            // Mostrar la pestaña actual y activar el botón
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>

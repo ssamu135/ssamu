@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C# | Guía Completa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-hashtag"></i> C#</h1>
+        <p class="subtitle">El lenguaje moderno del ecosistema .NET</p>
+    </header>
+    
+    <nav>
+        <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+        <a href="sandbox.html"><i class="fas fa-code"></i> Probador</a>
+        <a href="python.html"><i class="fab fa-python"></i> Python</a>
+        <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+        <a href="java.html"><i class="fab fa-java"></i> Java</a>
+        <a href="cpp.html"><i class="fas fa-copyright"></i> C++</a>
+        <a href="php.html"><i class="fab fa-php"></i> PHP</a>
+        <a href="csharp.html" class="active"><i class="fas fa-hashtag"></i> C#</a>
+        <a href="sql.html"><i class="fas fa-database"></i> SQL</a>
+        <a href="ruby.html"><i class="fas fa-gem"></i> Ruby</a>
+        <a href="swift.html"><i class="fab fa-swift"></i> Swift</a>
+        <a href="rust.html"><i class="fas fa-cog"></i> Rust</a>
+    </nav>
+    
+    <div class="container">
+        <div class="language-card">
+            <div class="language-header">
+                <img src="https://cdn-icons-png.flaticon.com/512/6132/6132221.png" alt="Logo C#" class="language-logo">
+                <div>
+                    <h2>C#</h2>
+                    <div class="meta-info">
+                        <span class="meta"><i class="fas fa-calendar"></i> Creado en 2000</span>
+                        <span class="meta"><i class="fas fa-user"></i> Anders Hejlsberg</span>
+                        <span class="meta"><i class="fas fa-star"></i> Top 5 en popularidad</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-container">
+                <div class="tabs">
+                    <button class="tab-button active" onclick="openTab(event, 'overview')">Descripción</button>
+                    <button class="tab-button" onclick="openTab(event, 'syntax')">Sintaxis</button>
+                    <button class="tab-button" onclick="openTab(event, 'examples')">Ejemplos</button>
+                    <button class="tab-button" onclick="openTab(event, 'resources')">Recursos</button>
+                </div>
+                
+                <div id="overview" class="tab-content" style="display: block;">
+                    <h3><i class="fas fa-info-circle"></i> Características Principales</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> <strong>Orientado a objetos:</strong> Clases, herencia, polimorfismo</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Tipado fuerte:</strong> Seguridad en tiempo de compilación</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Moderno:</strong> LINQ, async/await, pattern matching</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Multiplataforma:</strong> .NET Core/.NET 5+</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Ecosistema rico:</strong> Visual Studio, Unity, Xamarin</li>
+                    </ul>
+                    
+                    <h3><i class="fas fa-cogs"></i> Usos Comunes</h3>
+                    <div class="uses-grid">
+                        <div class="use-card">
+                            <i class="fas fa-window-maximize"></i>
+                            <h4>Aplicaciones Web</h4>
+                            <p>ASP.NET Core</p>
+                        </div>
+                        <div class="use-card">
+                            <i class="fas fa-desktop"></i>
+                            <h4>Escritorio</h4>
+                            <p>WPF, WinForms</p>
+                        </div>
+                        <div class="use-card">
+                            <i class="fas fa-gamepad"></i>
+                            <h4>Videojuegos</h4>
+                            <p>Unity Engine</p>
+                        </div>
+                        <div class="use-card">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Móviles</h4>
+                            <p>Xamarin</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="syntax" class="tab-content">
+                    <h3><i class="fas fa-code"></i> Sintaxis Básica</h3>
+                    <div class="syntax-example">
+                        <h4>Tipos y variables</h4>
+                        <pre><code>// Tipos básicos
+int edad = 30;                      // Entero
+double precio = 19.99;              // Decimal
+string nombre = "Juan";             // Cadena
+bool esActivo = true;               // Booleano
+char letra = 'A';                   // Carácter
+
+// Constantes
+const float PI = 3.141592f;
+
+// Tipos compuestos
+int[] numeros = { 1, 2, 3 };        // Array
+List<string> nombres = new List<string>(); // Lista genérica
+Dictionary<int, string> dict = new Dictionary<int, string>(); // Diccionario</code></pre>
+                    </div>
+                    
+                    <div class="syntax-example">
+                        <h4>Estructuras de control</h4>
+                        <pre><code>// If-else
+if (edad >= 18) 
+{
+    Console.WriteLine("Mayor de edad");
+}
+else 
+{
+    Console.WriteLine("Menor de edad");
+}
+
+// Switch (moderno con pattern matching)
+string resultado = edad switch
+{
+    < 13 => "Niño",
+    < 18 => "Adolescente",
+    _ => "Adulto"
+};
+
+// Bucles
+for (int i = 0; i < 10; i++) 
+{
+    Console.WriteLine(i);
+}
+
+foreach (var num in numeros) 
+{
+    Console.WriteLine(num);
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div id="examples" class="tab-content">
+                    <h3><i class="fas fa-laptop-code"></i> Ejemplos Prácticos</h3>
+                    
+                    <div class="example-card">
+                        <h4>1. Hola Mundo y LINQ</h4>
+                        <pre><code>using System;
+using System.Linq;
+using System.Collections.Generic;
+
+class Program 
+{
+    static void Main() 
+    {
+        // Hola Mundo básico
+        Console.WriteLine("¡Hola, mundo!");
+        
+        // LINQ (Language Integrated Query)
+        var numeros = new List<int> { 1, 2, 3, 4, 5, 6 };
+        
+        // Sintaxis de método
+        var pares = numeros.Where(n => n % 2 == 0);
+        
+        // Sintaxis de consulta
+        var mayores = from n in numeros
+                     where n > 3
+                     select n * 2;
+        
+        Console.WriteLine($"Pares: {string.Join(", ", pares)}");
+    }
+}</code></pre>
+                        <button class="try-button" onclick="window.open('sandbox.html?language=csharp', '_blank')">
+                            <i class="fas fa-play"></i> Probar este código
+                        </button>
+                    </div>
+                    
+                    <div class="example-card">
+                        <h4>2. POO y async/await</h4>
+                        <pre><code>using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+
+// Clase base abstracta
+public abstract class Figura 
+{
+    public abstract double Area();
+}
+
+// Clase derivada
+public class Circulo : Figura 
+{
+    public double Radio { get; }
+    
+    public Circulo(double radio) => Radio = radio;
+    
+    public override double Area() => Math.PI * Radio * Radio;
+}
+
+class Program 
+{
+    // Método asíncrono
+    static async Task<string> ObtenerPaginaWeb(string url) 
+    {
+        using var client = new HttpClient();
+        return await client.GetStringAsync(url);
+    }
+    
+    static async Task Main() 
+    {
+        var circulo = new Circulo(5);
+        Console.WriteLine($"Área: {circulo.Area()}");
+        
+        var contenido = await ObtenerPaginaWeb("https://example.com");
+        Console.WriteLine($"Longitud del contenido: {contenido.Length}");
+    }
+}</code></pre>
+                    </div>
+                    
+                    <div class="example-card">
+                        <h4>3. API Web con ASP.NET Core</h4>
+                        <pre><code>using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Hosting;
+
+// Clase de inicio
+public class Program 
+{
+    public static void Main(string[] args) => 
+        Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder => 
+            {
+                webBuilder.Configure(app => 
+                {
+                    app.UseRouting();
+                    app.UseEndpoints(endpoints => 
+                    {
+                        endpoints.MapGet("/", async context => 
+                        {
+                            await context.Response.WriteAsync("¡Hola desde ASP.NET Core!");
+                        });
+                        
+                        endpoints.MapGet("/saludo/{nombre}", async context => 
+                        {
+                            var nombre = context.Request.RouteValues["nombre"];
+                            await context.Response.WriteAsync($"Hola, {nombre}!");
+                        });
+                    });
+                });
+            })
+            .Build()
+            .Run();
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div id="resources" class="tab-content">
+                    <h3><i class="fas fa-book"></i> Recursos de Aprendizaje</h3>
+                    
+                    <div class="resource-card">
+                        <h4><i class="fas fa-link"></i> Documentación Oficial</h4>
+                        <ul>
+                            <li><a href="https://docs.microsoft.com/en-us/dotnet/csharp/" target="_blank">Documentación de C#</a></li>
+                            <li><a href="https://dotnet.microsoft.com/" target="_blank">Plataforma .NET</a></li>
+                            <li><a href="https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/" target="_blank">Tour de C#</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h4><i class="fas fa-graduation-cap"></i> Cursos Recomendados</h4>
+                        <ul>
+                            <li><a href="https://dotnet.microsoft.com/learn" target="_blank">Microsoft Learn</a></li>
+                            <li><a href="https://www.udemy.com/course/csharp-tutorial/" target="_blank">UDEMY: C# Basics for Beginners</a></li>
+                            <li><a href="https://www.pluralsight.com/paths/csharp" target="_blank">Pluralsight: C# Path</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h4><i class="fas fa-tools"></i> Herramientas y Frameworks</h4>
+                        <ul>
+                            <li><strong>IDEs:</strong> Visual Studio, Rider, VS Code</li>
+                            <li><strong>Web:</strong> ASP.NET Core, Blazor</li>
+                            <li><strong>Testing:</strong> xUnit, NUnit, Moq</li>
+                            <li><strong>ORM:</strong> Entity Framework Core</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Guía de Programación | C#: Potencia el ecosistema .NET</p>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            // Ocultar todos los contenidos de pestañas
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].style.display = "none";
+            }
+            
+            // Desactivar todos los botones de pestañas
+            const tabButtons = document.getElementsByClassName("tab-button");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            
+            // Mostrar la pestaña actual y activar el botón
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

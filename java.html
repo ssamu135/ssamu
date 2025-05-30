@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java | Guía Completa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fab fa-java"></i> Java</h1>
+        <p class="subtitle">Lenguaje de programación orientado a objetos multiplataforma</p>
+    </header>
+    
+    <nav>
+        <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+        <a href="sandbox.html"><i class="fas fa-code"></i> Probador</a>
+        <a href="python.html"><i class="fab fa-python"></i> Python</a>
+        <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+        <a href="java.html" class="active"><i class="fab fa-java"></i> Java</a>
+        <a href="cpp.html"><i class="fas fa-copyright"></i> C++</a>
+        <a href="php.html"><i class="fab fa-php"></i> PHP</a>
+        <a href="csharp.html"><i class="fas fa-hashtag"></i> C#</a>
+        <a href="sql.html"><i class="fas fa-database"></i> SQL</a>
+        <a href="ruby.html"><i class="fas fa-gem"></i> Ruby</a>
+        <a href="swift.html"><i class="fab fa-swift"></i> Swift</a>
+        <a href="rust.html"><i class="fas fa-cog"></i> Rust</a>
+    </nav>
+    
+    <div class="container">
+        <div class="language-card">
+            <div class="language-header">
+                <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" alt="Logo Java" class="language-logo">
+                <div>
+                    <h2>Java</h2>
+                    <div class="meta-info">
+                        <span class="meta"><i class="fas fa-calendar"></i> Creado en 1995</span>
+                        <span class="meta"><i class="fas fa-user"></i> James Gosling</span>
+                        <span class="meta"><i class="fas fa-star"></i> Popularidad: Alta</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-container">
+                <div class="tabs">
+                    <button class="tab-button active" onclick="openTab(event, 'overview')">Descripción</button>
+                    <button class="tab-button" onclick="openTab(event, 'syntax')">Sintaxis</button>
+                    <button class="tab-button" onclick="openTab(event, 'examples')">Ejemplos</button>
+                    <button class="tab-button" onclick="openTab(event, 'resources')">Recursos</button>
+                </div>
+                
+                <div id="overview" class="tab-content" style="display: block;">
+                    <h3><i class="fas fa-info-circle"></i> Características Principales</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> <strong>Orientado a objetos:</strong> Todo en Java es un objeto</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Multiplataforma:</strong> "Write once, run anywhere" (WORA)</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Tipado estático:</strong> Verificación de tipos en tiempo de compilación</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Recolección de basura:</strong> Manejo automático de memoria</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Multihilo:</strong> Soporte para programación concurrente</li>
+                    </ul>
+                    
+                    <h3><i class="fas fa-cogs"></i> Usos Comunes</h3>
+                    <div class="uses-grid">
+                        <div class="use-card">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Aplicaciones Android</h4>
+                        </div>
+                        <div class="use-card">
+                            <i class="fas fa-server"></i>
+                            <h4>Backend empresarial</h4>
+                        </div>
+                        <div class="use-card">
+                            <i class="fas fa-gamepad"></i>
+                            <h4>Juegos (Minecraft)</h4>
+                        </div>
+                        <div class="use-card">
+                            <i class="fas fa-cloud"></i>
+                            <h4>Computación en la nube</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="syntax" class="tab-content">
+                    <h3><i class="fas fa-code"></i> Sintaxis Básica</h3>
+                    <div class="syntax-example">
+                        <h4>Estructura de un programa Java</h4>
+                        <pre><code>// Declaración de clase
+public class NombreClase {
+    
+    // Método principal
+    public static void main(String[] args) {
+        // Código ejecutable
+    }
+    
+    // Otros métodos
+    tipoRetorno nombreMetodo(parámetros) {
+        // Implementación
+    }
+}</code></pre>
+                    </div>
+                    
+                    <div class="syntax-example">
+                        <h4>Variables y tipos</h4>
+                        <pre><code>// Declaración de variables
+int edad = 25;                    // Entero
+double precio = 19.99;            // Decimal
+char letra = 'A';                 // Carácter
+String nombre = "Juan";           // Cadena
+boolean esValido = true;           // Booleano
+
+// Constantes
+final double PI = 3.141592;</code></pre>
+                    </div>
+                </div>
+                
+                <div id="examples" class="tab-content">
+                    <h3><i class="fas fa-laptop-code"></i> Ejemplos Prácticos</h3>
+                    
+                    <div class="example-card">
+                        <h4>1. Hola Mundo</h4>
+                        <pre><code>public class HolaMundo {
+    public static void main(String[] args) {
+        System.out.println("¡Hola, mundo!");
+    }
+}</code></pre>
+                        <button class="try-button" onclick="window.open('sandbox.html?language=java', '_blank')">
+                            <i class="fas fa-play"></i> Probar este código
+                        </button>
+                    </div>
+                    
+                    <div class="example-card">
+                        <h4>2. POO - Clase y Objeto</h4>
+                        <pre><code>// Definición de clase
+public class Coche {
+    // Atributos
+    String marca;
+    String modelo;
+    int año;
+    
+    // Constructor
+    public Coche(String marca, String modelo, int año) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.año = año;
+    }
+    
+    // Método
+    public void arrancar() {
+        System.out.println("El coche " + marca + " está arrancando");
+    }
+}
+
+// Uso de la clase
+public class Main {
+    public static void main(String[] args) {
+        Coche miCoche = new Coche("Toyota", "Corolla", 2020);
+        miCoche.arrancar();
+    }
+}</code></pre>
+                    </div>
+                    
+                    <div class="example-card">
+                        <h4>3. Colecciones</h4>
+                        <pre><code>import java.util.ArrayList;
+
+public class EjemploListas {
+    public static void main(String[] args) {
+        // Crear lista
+        ArrayList<String> frutas = new ArrayList<>();
+        
+        // Añadir elementos
+        frutas.add("Manzana");
+        frutas.add("Banana");
+        frutas.add("Naranja");
+        
+        // Recorrer lista
+        for(String fruta : frutas) {
+            System.out.println(fruta);
+        }
+    }
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div id="resources" class="tab-content">
+                    <h3><i class="fas fa-book"></i> Recursos de Aprendizaje</h3>
+                    
+                    <div class="resource-card">
+                        <h4><i class="fas fa-link"></i> Enlaces Oficiales</h4>
+                        <ul>
+                            <li><a href="https://www.oracle.com/java/" target="_blank">Sitio oficial de Java (Oracle)</a></li>
+                            <li><a href="https://docs.oracle.com/en/java/" target="_blank">Documentación oficial</a></li>
+                            <li><a href="https://dev.java/" target="_blank">Portal para desarrolladores</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h4><i class="fas fa-graduation-cap"></i> Cursos Recomendados</h4>
+                        <ul>
+                            <li><a href="https://www.codecademy.com/learn/learn-java" target="_blank">Codecademy: Learn Java</a></li>
+                            <li><a href="https://www.coursera.org/learn/java-programming" target="_blank">Coursera: Java Programming</a></li>
+                            <li><a href="https://www.udemy.com/topic/java/" target="_blank">Udemy: Cursos de Java</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h4><i class="fas fa-tools"></i> Herramientas</h4>
+                        <ul>
+                            <li><strong>JDK:</strong> Kit de desarrollo Java</li>
+                            <li><strong>IDEs:</strong> IntelliJ IDEA, Eclipse, NetBeans</li>
+                            <li><strong>Build Tools:</strong> Maven, Gradle</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Guía de Programación | Java</p>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            // Ocultar todos los contenidos de pestañas
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].style.display = "none";
+            }
+            
+            // Desactivar todos los botones de pestañas
+            const tabButtons = document.getElementsByClassName("tab-button");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            
+            // Mostrar la pestaña actual y activar el botón
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>

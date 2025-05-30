@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python | Guía Completa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fab fa-python"></i> Python</h1>
+        <p class="subtitle">Simple en sintaxis, poderoso en capacidades</p>
+    </header>
+    
+    <nav>
+        <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+        <a href="sandbox.html"><i class="fas fa-code"></i> Probador</a>
+        <a href="python.html" class="active"><i class="fab fa-python"></i> Python</a>
+        <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+        <a href="java.html"><i class="fab fa-java"></i> Java</a>
+        <a href="cpp.html"><i class="fas fa-copyright"></i> C++</a>
+        <a href="php.html"><i class="fab fa-php"></i> PHP</a>
+        <a href="csharp.html"><i class="fas fa-hashtag"></i> C#</a>
+        <a href="sql.html"><i class="fas fa-database"></i> SQL</a>
+        <a href="ruby.html"><i class="fas fa-gem"></i> Ruby</a>
+        <a href="swift.html"><i class="fab fa-swift"></i> Swift</a>
+        <a href="rust.html"><i class="fas fa-cog"></i> Rust</a>
+    </nav>
+    
+    <div class="container">
+        <div class="language-card">
+            <div class="language-header">
+                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Logo Python" class="language-logo">
+                <div>
+                    <h2>Python</h2>
+                    <div class="meta-info">
+                        <span class="meta"><i class="fas fa-calendar"></i> Creado en 1991</span>
+                        <span class="meta"><i class="fas fa-user"></i> Guido van Rossum</span>
+                        <span class="meta"><i class="fas fa-star"></i> Popularidad: #1 (Índice TIOBE)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-container">
+                <div class="tabs">
+                    <button class="tab-button active" onclick="openTab(event, 'overview')">Descripción</button>
+                    <button class="tab-button" onclick="openTab(event, 'syntax')">Sintaxis</button>
+                    <button class="tab-button" onclick="openTab(event, 'examples')">Ejemplos</button>
+                    <button class="tab-button" onclick="openTab(event, 'resources')">Recursos</button>
+                </div>
+                
+                <div id="overview" class="tab-content" style="display: block;">
+                    <h3><i class="fas fa-info-circle"></i> Características Principales</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> <strong>Sintaxis legible:</strong> Código claro y expresivo</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Multiparadigma:</strong> Orientado a objetos, funcional, imperativo</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Tipado dinámico:</strong> No se declaran tipos de variables</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Interpretado:</strong> No requiere compilación</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Baterías incluidas:</strong> Amplia biblioteca estándar</li>
+                    </ul>
+                    
+                    <h3><i class="fas fa-cogs"></i> Usos Comunes</h3>
+                    <div class="uses-grid">
+                        <div class="use-card">
+                            <i class="fas fa-brain"></i>
+                            <h4>Inteligencia Artificial</h4>
+                        </div>
+                        <div class="use-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Ciencia de Datos</h4>
+                        </div>
+                        <div class="use-card">
+                            <i class="fas fa-globe"></i>
+                            <h4>Desarrollo Web</h4>
+                        </div>
+                        <div class="use-card">
+                            <i class="fas fa-robot"></i>
+                            <h4>Automatización</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="syntax" class="tab-content">
+                    <h3><i class="fas fa-code"></i> Sintaxis Básica</h3>
+                    <div class="syntax-example">
+                        <h4>Estructuras básicas</h4>
+                        <pre><code># Variables
+nombre = "Juan"
+edad = 30
+precio = 19.99
+es_activo = True
+
+# Listas (arrays)
+frutas = ["manzana", "banana", "naranja"]
+frutas.append("uva")
+
+# Diccionarios (objetos)
+persona = {
+    "nombre": "Ana",
+    "edad": 25,
+    "ciudad": "Madrid"
+}
+
+# Tuplas (inmutables)
+coordenadas = (10.5, -12.3)</code></pre>
+                    </div>
+                    
+                    <div class="syntax-example">
+                        <h4>Control de flujo</h4>
+                        <pre><code># Condicionales
+if edad >= 18:
+    print("Mayor de edad")
+elif edad > 12:
+    print("Adolescente")
+else:
+    print("Niño")
+
+# Bucles
+for fruta in frutas:
+    print(fruta)
+
+# Comprensión de listas
+cuadrados = [x**2 for x in range(10)]</code></pre>
+                    </div>
+                </div>
+                
+                <div id="examples" class="tab-content">
+                    <h3><i class="fas fa-laptop-code"></i> Ejemplos Prácticos</h3>
+                    
+                    <div class="example-card">
+                        <h4>1. Hola Mundo</h4>
+                        <pre><code># Versión básica
+print("¡Hola, mundo!")
+
+# Con formato
+nombre = input("¿Cómo te llamas? ")
+print(f"Hola, {nombre}. ¡Bienvenido a Python!")</code></pre>
+                        <button class="try-button" onclick="window.open('sandbox.html?language=python', '_blank')">
+                            <i class="fas fa-play"></i> Probar este código
+                        </button>
+                    </div>
+                    
+                    <div class="example-card">
+                        <h4>2. POO en Python</h4>
+                        <pre><code>class Animal:
+    def __init__(self, nombre):
+        self.nombre = nombre
+    
+    def hacer_sonido(self):
+        raise NotImplementedError("Subclases deben implementar este método")
+
+class Perro(Animal):
+    def hacer_sonido(self):
+        return "¡Guau!"
+
+class Gato(Animal):
+    def hacer_sonido(self):
+        return "¡Miau!"
+
+# Uso
+mi_perro = Perro("Fido")
+print(mi_perro.nombre, "dice:", mi_perro.hacer_sonido())</code></pre>
+                    </div>
+                    
+                    <div class="example-card">
+                        <h4>3. Web Scraping básico</h4>
+                        <pre><code>import requests
+from bs4 import BeautifulSoup
+
+# Obtener contenido de una página
+url = "https://ejemplo.com"
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+
+# Extraer todos los títulos h1
+titulos = soup.find_all('h1')
+for titulo in titulos:
+    print(titulo.text)</code></pre>
+                    </div>
+                </div>
+                
+                <div id="resources" class="tab-content">
+                    <h3><i class="fas fa-book"></i> Recursos de Aprendizaje</h3>
+                    
+                    <div class="resource-card">
+                        <h4><i class="fas fa-link"></i> Enlaces Oficiales</h4>
+                        <ul>
+                            <li><a href="https://www.python.org/" target="_blank">Sitio oficial de Python</a></li>
+                            <li><a href="https://docs.python.org/3/" target="_blank">Documentación oficial</a></li>
+                            <li><a href="https://wiki.python.org/moin/SpanishLanguage" target="_blank">Recursos en español</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h4><i class="fas fa-graduation-cap"></i> Cursos Recomendados</h4>
+                        <ul>
+                            <li><a href="https://www.udemy.com/course/python-total/" target="_blank">Python Total - Programador Avanzado</a></li>
+                            <li><a href="https://www.freecodecamp.org/learn/scientific-computing-with-python/" target="_blank">freeCodeCamp: Scientific Computing</a></li>
+                            <li><a href="https://www.codecademy.com/learn/learn-python-3" target="_blank">Codecademy: Learn Python 3</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h4><i class="fas fa-tools"></i> Librerías Populares</h4>
+                        <ul>
+                            <li><strong>Web:</strong> Django, Flask, FastAPI</li>
+                            <li><strong>Datos:</strong> Pandas, NumPy, Matplotlib</li>
+                            <li><strong>IA/ML:</strong> TensorFlow, PyTorch, scikit-learn</li>
+                            <li><strong>Automatización:</strong> Selenium, BeautifulSoup</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Guía de Programación | Python: Simple pero poderoso</p>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            // Ocultar todos los contenidos de pestañas
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].style.display = "none";
+            }
+            
+            // Desactivar todos los botones de pestañas
+            const tabButtons = document.getElementsByClassName("tab-button");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            
+            // Mostrar la pestaña actual y activar el botón
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>

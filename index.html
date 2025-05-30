@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Lenguajes de Programación</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Animación de Bienvenida -->
+    <div id="welcome-animation">
+        <div class="welcome-content">
+            <h1><i class="fas fa-code"></i> Guía de Programación</h1>
+            <div class="loader"></div>
+            <p>Preparando tu entorno de aprendizaje...</p>
+        </div>
+    </div>
+
+    <header>
+        <h1>Guía de <span class="highlight">Lenguajes</span> de Programación</h1>
+    </header>
+    
+    <nav>
+        <a href="index.html" class="active"><i class="fas fa-home"></i> Inicio</a>
+        <a href="sandbox.html"><i class="fas fa-play"></i> Probador</a>
+        <a href="python.html"><i class="fab fa-python"></i> Python</a>
+        <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+        <a href="java.html"><i class="fab fa-java"></i> Java</a>
+        <a href="cpp.html"><i class="fas fa-copyright"></i> C++</a>
+        <a href="php.html"><i class="fab fa-php"></i> PHP</a>
+        <a href="csharp.html"><i class="fas fa-hashtag"></i> C#</a>
+        <a href="sql.html"><i class="fas fa-database"></i> SQL</a>
+        <a href="ruby.html"><i class="fas fa-gem"></i> Ruby</a>
+        <a href="swift.html"><i class="fab fa-swift"></i> Swift</a>
+        <a href="rust.html"><i class="fas fa-cog"></i> Rust</a>
+    </nav>
+    
+    <div class="container">
+        <div class="language-card">
+            <h2>Bienvenido a una introducción a estos lenguajes</h2>
+            <p>Explora los principales lenguajes de programación con ejemplos prácticos y sintaxis clara. Selecciona un lenguaje del menú superior para comenzar.</p>
+            
+            <div class="highlight">
+                <p><i class="fas fa-lightbulb"></i> <strong>Novedad:</strong> Ahora puedes probar código directamente en nuestro <a href="sandbox.html" class="sandbox-link">Probador Online</a>.</p>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Ejemplos Prácticos</h3>
+                    <p>Código real listo para copiar y pegar</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Probador Integrado</h3>
+                    <p>Ejecuta código sin salir del sitio</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-layer-group"></i>
+                    <h3>Comparativas</h3>
+                    <p>Diferencias entre lenguajes</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Guía de Programación | Diseñado con <i class="fas fa-heart"></i> para desarrolladores</p>
+    </footer>
+
+    <script>
+        // Eliminar animación después de 3 segundos
+        setTimeout(() => {
+            document.getElementById('welcome-animation').remove();
+        }, 3000);
+    </script>
+</body>
+</html>

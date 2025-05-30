@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP | Guía Completa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fab fa-php"></i> PHP</h1>
+        <p class="subtitle">El lenguaje de programación del lado del servidor</p>
+    </header>
+    
+    <nav>
+        <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+        <a href="sandbox.html"><i class="fas fa-code"></i> Probador</a>
+        <a href="python.html"><i class="fab fa-python"></i> Python</a>
+        <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+        <a href="java.html"><i class="fab fa-java"></i> Java</a>
+        <a href="cpp.html"><i class="fas fa-copyright"></i> C++</a>
+        <a href="php.html" class="active"><i class="fab fa-php"></i> PHP</a>
+        <a href="csharp.html"><i class="fas fa-hashtag"></i> C#</a>
+        <a href="sql.html"><i class="fas fa-database"></i> SQL</a>
+        <a href="ruby.html"><i class="fas fa-gem"></i> Ruby</a>
+        <a href="swift.html"><i class="fab fa-swift"></i> Swift</a>
+        <a href="rust.html"><i class="fas fa-cog"></i> Rust</a>
+    </nav>
+    
+    <div class="container">
+        <div class="language-card">
+            <div class="language-header">
+                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968332.png" alt="Logo PHP" class="language-logo">
+                <div>
+                    <h2>PHP</h2>
+                    <div class="meta-info">
+                        <span class="meta"><i class="fas fa-calendar"></i> Creado en 1994</span>
+                        <span class="meta"><i class="fas fa-user"></i> Rasmus Lerdorf</span>
+                        <span class="meta"><i class="fas fa-server"></i> Usado en el 79% de sitios web</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-container">
+                <div class="tabs">
+                    <button class="tab-button active" onclick="openTab(event, 'overview')">Descripción</button>
+                    <button class="tab-button" onclick="openTab(event, 'syntax')">Sintaxis</button>
+                    <button class="tab-button" onclick="openTab(event, 'examples')">Ejemplos</button>
+                    <button class="tab-button" onclick="openTab(event, 'resources')">Recursos</button>
+                </div>
+                
+                <div id="overview" class="tab-content" style="display: block;">
+                    <h3><i class="fas fa-info-circle"></i> Características Principales</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> <strong>Backend web:</strong> Especializado para desarrollo del lado del servidor</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Integración con HTML:</strong> Código PHP embebido en páginas web</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Amplia adopción:</strong> Soporte en casi todos los servicios de hosting</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Bases de datos:</strong> Excelente soporte para MySQL, PostgreSQL, etc.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Frameworks modernos:</strong> Laravel, Symfony, CodeIgniter</li>
+                    </ul>
+                    
+                    <h3><i class="fas fa-cogs"></i> Usos Comunes</h3>
+                    <div class="uses-grid">
+                        <div class="use-card">
+                            <i class="fas fa-wordpress"></i>
+                            <h4>Sistemas CMS</h4>
+                            <p>WordPress, Drupal, Joomla</p>
+                        </div>
+                        <div class="use-card">
+                            <i class="fas fa-shopping-cart"></i>
+                            <h4>E-commerce</h4>
+                            <p>Magento, WooCommerce</p>
+                        </div>
+                        <div class="use-card">
+                            <i class="fas fa-server"></i>
+                            <h4>APIs REST</h4>
+                            <p>Backend para aplicaciones</p>
+                        </div>
+                        <div class="use-card">
+                            <i class="fas fa-users"></i>
+                            <h4>Sistemas de usuarios</h4>
+                            <p>Autenticación, perfiles</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="syntax" class="tab-content">
+                    <h3><i class="fas fa-code"></i> Sintaxis Básica</h3>
+                    <div class="syntax-example">
+                        <h4>Estructura básica</h4>
+                        <pre><code>&lt;?php
+// Esto es un script PHP
+echo "Hola Mundo";
+
+// Variables
+$nombre = "Juan";
+$edad = 30;
+$precio = 19.99;
+$activo = true;
+
+// Constantes
+define("PI", 3.1416);
+?&gt;
+
+&lt;!-- PHP mezclado con HTML --&gt;
+&lt;p&gt;Bienvenido, &lt;?php echo $nombre; ?&gt;&lt;/p&gt;</code></pre>
+                    </div>
+                    
+                    <div class="syntax-example">
+                        <h4>Funciones y arrays</h4>
+                        <pre><code>&lt;?php
+// Funciones
+function saludar($nombre) {
+    return "Hola, " . $nombre;
+}
+
+// Arrays indexados
+$frutas = array("Manzana", "Banana", "Naranja");
+
+// Arrays asociativos
+$persona = array(
+    "nombre" => "Ana",
+    "edad" => 25,
+    "ciudad" => "Barcelona"
+);
+
+// Función con tipo de retorno (PHP 7+)
+function suma(int $a, int $b): int {
+    return $a + $b;
+}
+?&gt;</code></pre>
+                    </div>
+                </div>
+                
+                <div id="examples" class="tab-content">
+                    <h3><i class="fas fa-laptop-code"></i> Ejemplos Prácticos</h3>
+                    
+                    <div class="example-card">
+                        <h4>1. Formulario de contacto</h4>
+                        <pre><code>&lt;?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nombre = htmlspecialchars($_POST['nombre']);
+    $email = htmlspecialchars($_POST['email']);
+    $mensaje = htmlspecialchars($_POST['mensaje']);
+    
+    // Validación básica
+    if (empty($nombre) || empty($email)) {
+        echo "Por favor complete todos los campos";
+    } else {
+        // Enviar email (simulado)
+        echo "&lt;div class='success'&gt;Gracias $nombre, tu mensaje ha sido enviado&lt;/div&gt;";
+    }
+}
+?&gt;
+
+&lt;form method="post"&gt;
+    &lt;input type="text" name="nombre" placeholder="Tu nombre"&gt;
+    &lt;input type="email" name="email" placeholder="Tu email"&gt;
+    &lt;textarea name="mensaje"&gt;&lt;/textarea&gt;
+    &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                        <button class="try-button" onclick="window.open('sandbox.html?language=php', '_blank')">
+                            <i class="fas fa-play"></i> Probar este código
+                        </button>
+                    </div>
+                    
+                    <div class="example-card">
+                        <h4>2. Conexión a MySQL (PDO)</h4>
+                        <pre><code>&lt;?php
+try {
+    $host = 'localhost';
+    $dbname = 'mi_base';
+    $user = 'usuario';
+    $pass = 'contraseña';
+    
+    // Crear conexión PDO
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    // Consulta preparada
+    $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE id = :id");
+    $stmt->execute(['id' => 1]);
+    $usuario = $stmt->fetch();
+    
+    print_r($usuario);
+    
+} catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+?&gt;</code></pre>
+                    </div>
+                    
+                    <div class="example-card">
+                        <h4>3. API REST básica</h4>
+                        <pre><code>&lt;?php
+header("Content-Type: application/json");
+
+// Simular datos
+$productos = [
+    ["id" => 1, "nombre" => "Laptop", "precio" => 999.99],
+    ["id" => 2, "nombre" => "Teléfono", "precio" => 599.99],
+    ["id" => 3, "nombre" => "Tablet", "precio" => 299.99]
+];
+
+// Obtener método HTTP
+$method = $_SERVER['REQUEST_METHOD'];
+
+switch ($method) {
+    case 'GET':
+        echo json_encode($productos);
+        break;
+    case 'POST':
+        $data = json_decode(file_get_contents('php://input'), true);
+        // Aquí iría la lógica para guardar
+        echo json_encode(["message" => "Producto creado"]);
+        break;
+    default:
+        http_response_code(405);
+        echo json_encode(["error" => "Método no permitido"]);
+}
+?&gt;</code></pre>
+                    </div>
+                </div>
+                
+                <div id="resources" class="tab-content">
+                    <h3><i class="fas fa-book"></i> Recursos de Aprendizaje</h3>
+                    
+                    <div class="resource-card">
+                        <h4><i class="fas fa-link"></i> Documentación Oficial</h4>
+                        <ul>
+                            <li><a href="https://www.php.net/" target="_blank">Sitio oficial de PHP</a></li>
+                            <li><a href="https://www.php.net/manual/es/" target="_blank">Manual en español</a></li>
+                            <li><a href="https://www.php-fig.org/" target="_blank">PHP-FIG (Estándares)</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h4><i class="fas fa-graduation-cap"></i> Cursos Recomendados</h4>
+                        <ul>
+                            <li><a href="https://www.php.net/manual/es/tutorial.php" target="_blank">Tutorial oficial</a></li>
+                            <li><a href="https://laracasts.com/series/php-for-beginners" target="_blank">Laracasts: PHP para principiantes</a></li>
+                            <li><a href="https://www.udemy.com/course/php-y-mysql/" target="_blank">UDEMY: PHP y MySQL</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h4><i class="fas fa-tools"></i> Frameworks Populares</h4>
+                        <ul>
+                            <li><strong>Laravel:</strong> Framework MVC moderno</li>
+                            <li><strong>Symfony:</strong> Componentes reutilizables</li>
+                            <li><strong>CodeIgniter:</strong> Ligero y rápido</li>
+                            <li><strong>Slim:</strong> Microframework para APIs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Guía de Programación | PHP: El lenguaje del backend web</p>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            // Ocultar todos los contenidos de pestañas
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].style.display = "none";
+            }
+            
+            // Desactivar todos los botones de pestañas
+            const tabButtons = document.getElementsByClassName("tab-button");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            
+            // Mostrar la pestaña actual y activar el botón
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>
